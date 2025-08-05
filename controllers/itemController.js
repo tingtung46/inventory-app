@@ -1,4 +1,21 @@
 const db = require("../db/query");
+const brand = [
+  "Daybird",
+  "Gravitator",
+  "Quester",
+  "Raptor Elite",
+  "Grolltex",
+  "Green Equipment",
+];
+const category = [
+  "Footwear",
+  "Climbing",
+  "Bags",
+  "Trekking",
+  "Jackets",
+  "Navigation",
+  "Cycling",
+];
 
 const itemListGet = async (req, res) => {
   const items = await db.getAllItems();
@@ -20,7 +37,11 @@ const updateItemGet = async (req, res) => {
   const { id } = req.params;
   const item = await db.getItem(id);
 
-  res.render("updateItem", { item: item[0] });
+  res.render("updateItem", {
+    item: item[0],
+    brands: brand,
+    categories: category,
+  });
 };
 
 const updateItemPost = async (req, res) => {
@@ -52,4 +73,5 @@ module.exports = {
   updateItemGet,
   updateItemPost,
   searchItemGet,
+  deleteItem,
 };
