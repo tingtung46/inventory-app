@@ -6,5 +6,5 @@ module.exports = new Pool({
   user: process.env.POSTGRES_USER,
   database: "inventory",
   password: process.env.POSTGRES_PASS,
-  port: 3000,
+  port: 5432,
 });
