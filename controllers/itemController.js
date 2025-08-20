@@ -17,9 +17,13 @@ const category = [
   "Cycling",
 ];
 
+const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
 const itemListGet = async (req, res) => {
   const items = await db.getAllItems();
-  res.render("index", { items });
+  res.render("index", { items, brand, category });
 };
 
 const addItemGet = (req, res) => {
@@ -66,6 +70,12 @@ const deleteItem = async (req, res) => {
   res.redirect("/");
 };
 
+const filterItemsGet = async (req, res) => {
+  const param = capitalizeFirstLetter(req.params.param);
+  const items = await db.filterItems(param);
+  res.render("index", { items, brand, category });
+};
+
 module.exports = {
   itemListGet,
   addItemGet,
@@ -74,4 +84,5 @@ module.exports = {
   updateItemPost,
   searchItemGet,
   deleteItem,
+  filterItemsGet,
 };
