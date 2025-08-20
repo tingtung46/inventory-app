@@ -5,6 +5,14 @@ async function getAllItems() {
   return rows;
 }
 
+async function filterItems(param) {
+  const { rows } = await pool.query(
+    "SELECT * FROM products WHERE brand = $1 OR category = $1",
+    [param]
+  );
+  return rows;
+}
+
 async function addItem(item, brand, category, price) {
   await pool.query(
     "INSERT INTO products (item, brand, category, price) VALUES ($1, $2, $3, $4)",
@@ -41,6 +49,7 @@ async function deleteItem(id) {
 
 module.exports = {
   getAllItems,
+  filterItems,
   addItem,
   getItem,
   updateItem,
