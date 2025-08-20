@@ -14,4 +14,6 @@ indexRouter.get("/search", itemController.searchItemGet);
 
 indexRouter.post("/:id/delete", itemController.deleteItem);
 
+indexRouter.get("/:param", itemController.filterItemsGet);
+
 module.exports = indexRouter;
