@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Add new item</title>
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+      <form action="/update" method="post">
+        <div>
+          <label for="item">Item Name</label>
+          <input type="text" name="item" id="item" value="<%= item.item %>" />
+        </div>
+
+        <div>
+          <label for="brand">Item Name</label>
+          <select name="brand" id="brand">
+            <% brands.forEach((brand) => { %>
+              <option value="<%= brand %>" <%= brand === item.brand ? 'selected' : '' %>><%= brand %></option>
+            <% }) %>
+          </select>
+        </div>
+
+        <div>
+          <label for="category">Category</label>
+          <select name="category" id="category">
+            <% categories.forEach((category) => { %>
+              <option value="<%= category %>" <%= category === item.category ? 'selected' : '' %>><%= category %></option>
+            <% }) %>
+          </select>
+        </div>
+
+        <div>
+          <label for="price">Price</label>
+          <span
+            >&dollar;<input
+              type="text"
+              name="price"
+              id="price"
+              value="<%= item.price %>"
+          /></span>
+        </div>
+
+        <button type="submit">Add item</button>
+      </form>
+    </main>
+  </body>
+</html>

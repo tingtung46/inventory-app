@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Products Inventory</title>
+  </head>
+
+  <body>
+    <%- include('partials/header.ejs') %>
+
+    <main>
+      <%- include('partials/sidebar.ejs', { brand, category }) %>
+
+      <section>
+        <% if (locals.items) { %> <%- include('partials/cards.ejs', {items:
+        items}) %> <% } else { %>
+        <p>Item not found.</p>
+        <% } %>
+
+        <a href="/new">Add new item</a>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Add new item</title>
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+      <form action="/new" method="post">
+        <div>
+          <label for="item">Item Name</label>
+          <input type="text" name="item" id="item" />
+        </div>
+
+        <div>
+          <label for="brand">Item Name</label>
+          <select name="brand" id="brand">
+            <option value="Daybird">Daybird</option>
+            <option value="Gravitator">Gravitator</option>
+            <option value="Quester">Quester</option>
+            <option value="Raptor Elite">Raptor Elite</option>
+            <option value="Grolltex">Grolltex</option>
+            <option value="Green Equipment">Green Equipment</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="category">Category</label>
+          <select name="category" id="category">
+            <option value="Footwear">Footwear</option>
+            <option value="Climbing">Climbing</option>
+            <option value="Bags">Bags</option>
+            <option value="Trekking">Trekking</option>
+            <option value="Jackets">Jackets</option>
+            <option value="Navigation">Navigation</option>
+            <option value="Cycling">Cycling</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="price">Price</label>
+          <span>&dollar;<input type="text" name="price" id="price" /></span>
+        </div>
+
+        <button type="submit">Add item</button>
+      </form>
+    </main>
+  </body>
+</html>

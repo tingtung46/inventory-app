@@ -1,0 +1,25 @@
+<% items.forEach((item) => { %>
+<div>
+  <div>
+    <h1><%= item.item %></h1>
+    <p><%= item.brand %></p>
+  </div>
+
+  <h3>&dollar;<%= item.price %></h3>
+
+  <div>
+    <button>
+      <a href="/update"><img src="/icon/editIcon.svg" alt="Edit" /></a>
+    </button>
+
+    <form action="/delete" method="get">
+      <button
+        type="submit"
+        onclick="prompt('Are you sure want to delete this item?')"
+      >
+        <img src="/icon/deleteIcon.svg" alt="Delete" />
+      </button>
+    </form>
+  </div>
+</div>
+<% }) %>

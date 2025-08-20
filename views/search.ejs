@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+      <% if (items) { %> <%- include('./partials/cards.ejs', { items: items })
+      %> <% } else { %>
+      <p>Item not found</p>
+      <% } %>
+    </main>
+  </body>
+</html>

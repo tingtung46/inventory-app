@@ -1,0 +1,19 @@
+<nav>
+  <div>
+    <h3>Category</h3>
+    <ul>
+      <% category.forEach((item) => { %>
+      <li><a href="/<%= item.toLowerCase() %>"><%= item %></a></li>
+      <% }) %>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Brand</h3>
+    <ul>
+      <% brand.forEach((item) => { %>
+      <li><a href="/<%= item.toLowerCase() %>"><%= item %></a></li>
+      <% }) %>
+    </ul>
+  </div>
+</nav>
