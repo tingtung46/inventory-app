@@ -1,20 +1,20 @@
 <html>
   <head>
-    <title>Add new item</title>
+    <title>Update item</title>
   </head>
 
   <body>
     <%- include('./partials/header.ejs') %>
 
     <main>
-      <form action="/update" method="post">
+      <form action="/<%= item.id %>/update" method="post">
         <div>
           <label for="item">Item Name</label>
           <input type="text" name="item" id="item" value="<%= item.item %>" />
         </div>
 
         <div>
-          <label for="brand">Item Name</label>
+          <label for="brand">Brand Name</label>
           <select name="brand" id="brand">
             <% brands.forEach((brand) => { %>
               <option value="<%= brand %>" <%= brand === item.brand ? 'selected' : '' %>><%= brand %></option>
@@ -42,7 +42,7 @@
           /></span>
         </div>
 
-        <button type="submit">Add item</button>
+        <button type="submit">Update item</button>
       </form>
     </main>
   </body>

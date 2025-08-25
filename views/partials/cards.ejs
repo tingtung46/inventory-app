@@ -9,10 +9,12 @@
 
   <div>
     <button>
-      <a href="/update"><img src="/icon/editIcon.svg" alt="Edit" /></a>
+      <a href="/<%= item.id %>/update/"
+        ><img src="/icon/editIcon.svg" alt="Edit"
+      /></a>
     </button>
 
-    <form action="/delete" method="get">
+    <form action="/<%= item.id %>/delete" method="get">
       <button
         type="submit"
         onclick="prompt('Are you sure want to delete this item?')"

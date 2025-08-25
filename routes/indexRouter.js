@@ -7,8 +7,8 @@ indexRouter.get("/", itemController.itemListGet);
 indexRouter.get("/new", itemController.addItemGet);
 indexRouter.post("/new", itemController.addItemPost);
 
-indexRouter.get("/update", itemController.updateItemGet);
-indexRouter.post("/update", itemController.updateItemPost);
+indexRouter.get("/:id/update", itemController.updateItemGet);
+indexRouter.post("/:id/update", itemController.updateItemPost);
 
 indexRouter.get("/search", itemController.searchItemGet);
 
