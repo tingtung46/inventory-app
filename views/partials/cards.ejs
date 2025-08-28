@@ -14,10 +14,10 @@
       /></a>
     </button>
 
-    <form action="/<%= item.id %>/delete" method="get">
+    <form action="/<%= item.id %>/delete" method="post">
       <button
         type="submit"
-        onclick="prompt('Are you sure want to delete this item?')"
+        onclick="confirm('Are you sure want to delete this item?')"
       >
         <img src="/icon/deleteIcon.svg" alt="Delete" />
       </button>
