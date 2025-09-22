@@ -47,6 +47,32 @@ async function deleteItem(id) {
   await pool.query("DELETE FROM products WHERE id = $1", [id]);
 }
 
+async function getBrands() {
+  const { rows } = await pool.query("SELECT * FROM brands ORDER BY id ASC");
+  return rows;
+}
+
+async function getCategories() {
+  const { rows } = await pool.query("SELECT * FROM categories ORDER BY id ASC");
+  return rows;
+}
+
+async function addBrand(brand) {
+  await pool.query("INSERT INTO brands (brand) VALUES ($1)", [brand]);
+}
+
+async function addCategory(category) {
+  await pool.query("INSERT INTO categories (category) VALUES ($1)", [category]);
+}
+
+async function deleteBrand(id) {
+  await pool.query("DELETE FROM brands WHERE id = $1", [id]);
+}
+
+async function deleteCategory(id) {
+  await pool.query("DELETE FROM categories WHERE id = $1", [id]);
+}
+
 module.exports = {
   getAllItems,
   filterItems,
@@ -55,4 +81,10 @@ module.exports = {
   updateItem,
   searchItem,
   deleteItem,
+  getBrands,
+  getCategories,
+  addBrand,
+  addCategory,
+  deleteBrand,
+  deleteCategory,
 };
