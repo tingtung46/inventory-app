@@ -7,7 +7,7 @@
     <%- include('partials/header.ejs') %>
 
     <main>
-      <%- include('partials/sidebar.ejs', { brand, category }) %>
+      <%- include('partials/sidebar.ejs', { brands, categories }) %>
 
       <section>
         <% if (locals.items) { %> <%- include('partials/cards.ejs', {items:

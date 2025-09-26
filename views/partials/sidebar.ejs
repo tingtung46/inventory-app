@@ -2,8 +2,10 @@
   <div>
     <h3>Category</h3>
     <ul>
-      <% category.forEach((item) => { %>
-      <li><a href="/<%= item.toLowerCase() %>"><%= item %></a></li>
+      <% categories.forEach((item) => { %>
+      <li>
+        <a href="/<%= item.category.toLowerCase() %>"><%= item.category %></a>
+      </li>
       <% }) %>
     </ul>
   </div>
@@ -11,8 +13,8 @@
   <div>
     <h3>Brand</h3>
     <ul>
-      <% brand.forEach((item) => { %>
-      <li><a href="/<%= item.toLowerCase() %>"><%= item %></a></li>
+      <% brands.forEach((item) => { %>
+      <li><a href="/<%= item.brand.toLowerCase() %>"><%= item.brand %></a></li>
       <% }) %>
     </ul>
   </div>

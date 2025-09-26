@@ -22,8 +22,10 @@ const capitalizeFirstLetter = (string) => {
 };
 
 const itemListGet = async (req, res) => {
+  const brands = await db.getBrands();
+  const categories = await db.getCategories();
   const items = await db.getAllItems();
-  res.render("index", { items, brand, category });
+  res.render("index", { items, brands, categories });
 };
 
 const addItemGet = (req, res) => {
