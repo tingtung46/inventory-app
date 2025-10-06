@@ -73,9 +73,14 @@ const deleteItem = async (req, res) => {
 };
 
 const filterItemsGet = async (req, res) => {
-  const param = capitalizeFirstLetter(req.params.param);
-  const items = await db.filterItems(param);
-  res.render("index", { items, brand, category });
+  const keyword = capitalizeFirstLetter(req.params.param);
+  const brands = await db.getBrands();
+  const categories = await db.getCategories();
+  const items = await db.filterItems(keyword);
+
+  console.log(items);
+
+  res.render("index", { items, brands, categories });
 };
 
 module.exports = {
