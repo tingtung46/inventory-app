@@ -76,9 +76,13 @@ const filterItemsGet = async (req, res) => {
   const keyword = capitalizeFirstLetter(req.params.param);
   const brands = await db.getBrands();
   const categories = await db.getCategories();
-  const items = await db.filterItems(keyword);
 
-  console.log(items);
+  //filter items based on params (brand/category or other)
+  let items = await db.filterItems(keyword);
+
+  if (!items.length && keyword === "Other") {
+    items = await db.getOther();
+  }
 
   res.render("index", { items, brands, categories });
 };

@@ -73,6 +73,13 @@ async function deleteCategory(id) {
   await pool.query("DELETE FROM categories WHERE id = $1", [id]);
 }
 
+async function getOther() {
+  const { rows } = await pool.query(
+    "SELECT P.* FROM products P LEFT JOIN categories C ON P.category = C.category LEFT JOIN brands B ON P.brand = B.brand WHERE C.category IS NULL OR B.brand IS NULL"
+  );
+  return rows;
+}
+
 module.exports = {
   getAllItems,
   filterItems,
@@ -87,4 +94,5 @@ module.exports = {
   addCategory,
   deleteBrand,
   deleteCategory,
+  getOther,
 };
