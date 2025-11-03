@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <title>Edit Category and Brand</title>
+  </head>
+
+  <body>
+    <div>
+      <div>
+        <h3>Category</h3>
+        <ul>
+          <% categories.forEach((item) => { %>
+          <li>
+            <a href="/<%= item.category.toLowerCase() %>"
+              ><%= item.category %></a
+            >
+            <button type="button">Delete</button>
+          </li>
+          <% }) %>
+        </ul>
+      </div>
+
+      <dialog id="category-dialog">
+        <h1>Create a new category</h1>
+
+        <form action="/new-category" method="post">
+          <div>
+            <label for="category">Category</label>
+            <input type="text" name="category" id="category" />
+          </div>
+
+          <div>
+            <button
+              type="button"
+              onclick="document.querySelector('#category-dialog').close()"
+            >
+              Cancel
+            </button>
+            <button type="submit">Add category</button>
+          </div>
+        </form>
+      </dialog>
+      <button
+        type="button"
+        onclick="document.querySelector('#category-dialog').showModal()"
+      >
+        Add new category
+      </button>
+    </div>
+
+    <div>
+      <div>
+        <h3>Brand</h3>
+        <ul>
+          <% brands.forEach((item) => { %>
+          <li>
+            <a href="/<%= item.brand.toLowerCase() %>"><%= item.brand %></a>
+            <button type="button">Delete</button>
+          </li>
+          <% }) %>
+        </ul>
+      </div>
+
+      <dialog id="brand-category">
+        <h1>Create a new brand</h1>
+
+        <form action="/new-brand" method="post">
+          <div>
+            <label for="brand">Brand</label>
+            <input type="text" name="brand" id="brand" />
+          </div>
+
+          <div>
+            <button
+              type="button"
+              onclick="document.querySelector('#brand-category').close()"
+            >
+              Cancel
+            </button>
+            <button type="submit">Add brand</button>
+          </div>
+        </form>
+      </dialog>
+      <button
+        type="button"
+        onclick="document.querySelector('#brand-category').showModal()"
+      >
+        Add new brand
+      </button>
+    </div>
+  </body>
+</html>

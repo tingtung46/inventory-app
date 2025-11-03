@@ -87,6 +87,13 @@ const filterItemsGet = async (req, res) => {
   res.render("index", { items, brands, categories });
 };
 
+const updateSidebarGet = async (req, res) => {
+  const brands = await db.getBrands();
+  const categories = await db.getCategories();
+
+  res.render("sidebarUpdate", { brands, categories });
+};
+
 module.exports = {
   itemListGet,
   addItemGet,
@@ -96,4 +103,5 @@ module.exports = {
   searchItemGet,
   deleteItem,
   filterItemsGet,
+  updateSidebarGet,
 };
