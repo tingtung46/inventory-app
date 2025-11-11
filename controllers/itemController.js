@@ -94,6 +94,18 @@ const updateSidebarGet = async (req, res) => {
   res.render("sidebarUpdate", { brands, categories });
 };
 
+const deleteBrand = async (req, res) => {
+  const id = req.params.id;
+  await db.deleteBrand(id);
+  res.redirect("/update-sidebar");
+};
+
+const deleteCategory = async (req, res) => {
+  const id = req.params.id;
+  await db.deleteCategory(id);
+  res.redirect("/update-sidebar");
+};
+
 module.exports = {
   itemListGet,
   addItemGet,
@@ -104,4 +116,6 @@ module.exports = {
   deleteItem,
   filterItemsGet,
   updateSidebarGet,
+  deleteBrand,
+  deleteCategory,
 };

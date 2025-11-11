@@ -13,7 +13,9 @@
             <a href="/<%= item.category.toLowerCase() %>"
               ><%= item.category %></a
             >
-            <button type="button">Delete</button>
+            <form action="/<%= item.id %>/category/delete" method="post">
+              <button type="submit">Delete</button>
+            </form>
           </li>
           <% }) %>
         </ul>
@@ -54,7 +56,9 @@
           <% brands.forEach((item) => { %>
           <li>
             <a href="/<%= item.brand.toLowerCase() %>"><%= item.brand %></a>
-            <button type="button">Delete</button>
+            <form action="/<%= item.id %>/brand/delete" method="post">
+              <button type="submit">Delete</button>
+            </form>
           </li>
           <% }) %>
         </ul>

@@ -13,6 +13,8 @@ indexRouter.post("/:id/update", itemController.updateItemPost);
 indexRouter.get("/search", itemController.searchItemGet);
 
 indexRouter.post("/:id/delete", itemController.deleteItem);
+indexRouter.post("/:id/brand/delete", itemController.deleteBrand);
+indexRouter.post("/:id/category/delete", itemController.deleteCategory);
 
 indexRouter.get("/update-sidebar", itemController.updateSidebarGet);
 
