@@ -94,6 +94,18 @@ const updateSidebarGet = async (req, res) => {
   res.render("sidebarUpdate", { brands, categories });
 };
 
+const addBrandPost = async (req, res) => {
+  const { brand } = req.body;
+  await db.addBrand(brand);
+  res.redirect("/update-sidebar");
+};
+
+const addCategoryPost = async (req, res) => {
+  const { category } = req.body;
+  await db.addCategory(category);
+  res.redirect("/update-sidebar");
+};
+
 const deleteBrand = async (req, res) => {
   const id = req.params.id;
   await db.deleteBrand(id);
@@ -116,6 +128,8 @@ module.exports = {
   deleteItem,
   filterItemsGet,
   updateSidebarGet,
+  addBrandPost,
+  addCategoryPost,
   deleteBrand,
   deleteCategory,
 };
