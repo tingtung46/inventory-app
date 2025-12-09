@@ -22,7 +22,7 @@ VALUES
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString: `postgresql://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASS}@localhost:5432/inventory`,
+    connectionString: `postgresql://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASS}@localhost:5432/inventory_app`,
   });
   await client.connect();
   await client.query(SQL);
