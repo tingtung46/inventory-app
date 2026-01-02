@@ -1,0 +1,52 @@
+table {
+  width: 90%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0.6rem auto;
+}
+
+thead {
+  color: rgb(170, 178, 184);
+  background-color: rgb(19, 42, 59);
+  text-align: left;
+  text-transform: uppercase;
+}
+
+thead tr,
+tbody tr {
+  border: 1px solid rgba(19, 42, 59, 0.2);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgb(204, 212, 219);
+}
+
+th,
+td {
+  padding: 1rem 2rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+tr {
+  & :nth-child(4) {
+    text-align: right;
+  }
+
+  & :nth-child(5) {
+    text-align: center;
+  }
+
+  & :nth-child(6) {
+    text-align: center;
+  }
+}
+
+.btn-table {
+  margin: 0 auto;
+}
+
+.wrapper {
+  overflow: hidden;
+}
