@@ -1,0 +1,24 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 3px solid rgb(55, 128, 184);
+  box-shadow: 0 3.5px 4px -4px rgb(45, 64, 78);
+}
+
+form {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  justify-content: end;
+
+  input {
+    outline: none;
+    border-radius: 6px;
+    padding: 0.28rem 0.4rem;
+    font-size: 0.75rem;
+    color: rgb(58, 58, 58);
+  }
+}
