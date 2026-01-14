@@ -1,0 +1,46 @@
+.sidebar {
+  padding: 1rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+  margin-top: 0.4rem;
+}
+
+li {
+  margin-bottom: 0.15rem;
+}
+
+.other {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+li,
+.other {
+  & a:hover {
+    color: rgb(129, 129, 129);
+  }
+}
+
+.side-wrapper {
+  margin-bottom: 1.5rem;
+  border-bottom: solid 2px rgb(168, 166, 166);
+}
+
+.side-edit {
+  display: block;
+  border: solid 2px white;
+  border-radius: 6px;
+  background-color: rgb(2, 87, 167);
+  color: white;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px black;
+
+  &:hover {
+    color: white;
+  }
+}

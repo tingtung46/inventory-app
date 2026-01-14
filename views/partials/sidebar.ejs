@@ -1,25 +1,31 @@
-<nav>
-  <div>
-    <h3>Category</h3>
-    <ul>
-      <% categories.forEach((item) => { %>
-      <li>
-        <a href="/<%= item.category.toLowerCase() %>"><%= item.category %></a>
-      </li>
-      <% }) %>
-    </ul>
+<nav class="sidebar">
+  <div class="side-wrapper">
+    <div class="side category">
+      <h3>Category</h3>
+
+      <ul>
+        <% categories.forEach((item) => { %>
+        <li>
+          <a href="/<%= item.category.toLowerCase() %>"><%= item.category %></a>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+
+    <div class="side brand">
+      <h3>Brand</h3>
+
+      <ul>
+        <% brands.forEach((item) => { %>
+        <li>
+          <a href="/<%= item.brand.toLowerCase() %>"><%= item.brand %></a>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+
+    <p class="other"><a href="/other">Other</a></p>
   </div>
 
-  <div>
-    <h3>Brand</h3>
-    <ul>
-      <% brands.forEach((item) => { %>
-      <li><a href="/<%= item.brand.toLowerCase() %>"><%= item.brand %></a></li>
-      <% }) %>
-    </ul>
-  </div>
-
-  <p><a href="/other">Other</a></p>
-
-  <a href="/update-sidebar">Edit category and brand</a>
+  <a class="side-edit" href="/update-sidebar"> Edit category and brand </a>
 </nav>
