@@ -26,3 +26,17 @@ main {
     width: 32px;
   }
 }
+
+.item-new {
+  display: block;
+  margin-top: 1rem;
+  border: solid 2px white;
+  border-radius: 6px;
+  background-color: rgb(48, 63, 97);
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+
+  & a {
+    color: white;
+  }
+}
