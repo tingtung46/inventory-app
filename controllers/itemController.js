@@ -28,8 +28,10 @@ const itemListGet = async (req, res) => {
   res.render("index", { items, brands, categories });
 };
 
-const addItemGet = (req, res) => {
-  res.render("form");
+const addItemGet = async (req, res) => {
+  const brands = await db.getBrands();
+  const categories = await db.getCategories();
+  res.render("form", { brands, categories });
 };
 
 const addItemPost = async (req, res) => {

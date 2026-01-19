@@ -1,12 +1,15 @@
 <html>
   <head>
     <title>Add new item</title>
+    <link rel="stylesheet" href="/styles/form.css" />
   </head>
 
   <body>
     <%- include('./partials/header.ejs') %>
 
     <main>
+      <h1>Add new item</h1>
+
       <form action="/new" method="post">
         <div>
           <label for="item">Item Name</label>
@@ -16,25 +19,18 @@
         <div>
           <label for="brand">Brand Name</label>
           <select name="brand" id="brand">
-            <option value="Daybird">Daybird</option>
-            <option value="Gravitator">Gravitator</option>
-            <option value="Quester">Quester</option>
-            <option value="Raptor Elite">Raptor Elite</option>
-            <option value="Grolltex">Grolltex</option>
-            <option value="Green Equipment">Green Equipment</option>
+            <% brands.forEach((item) => { %>
+            <option value="<%= item.brand %>"><%= item.brand %></option>
+            <% }) %>
           </select>
         </div>
 
         <div>
           <label for="category">Category</label>
           <select name="category" id="category">
-            <option value="Footwear">Footwear</option>
-            <option value="Climbing">Climbing</option>
-            <option value="Bags">Bags</option>
-            <option value="Trekking">Trekking</option>
-            <option value="Jackets">Jackets</option>
-            <option value="Navigation">Navigation</option>
-            <option value="Cycling">Cycling</option>
+            <% categories.forEach((item) => { %>
+            <option value="<%= item.category %>"><%= item.category %></option>
+            <% }) %>
           </select>
         </div>
 
@@ -45,6 +41,8 @@
 
         <button type="submit">Add item</button>
       </form>
+
+      <a href="/">Back to main page</a>
     </main>
   </body>
 </html>
