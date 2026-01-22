@@ -1,0 +1,93 @@
+@import url("./reset.css");
+@import url("./partials/header.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.item-form {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper-form {
+  min-width: 80%;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: underline;
+
+  &:hover {
+    color: rgb(48, 63, 97);
+  }
+}
+
+form {
+  margin-bottom: 0.75rem;
+}
+
+.item-input {
+  margin-bottom: 1rem;
+
+  & label,
+  & input,
+  & select {
+    display: block;
+  }
+
+  & label {
+    margin-bottom: 0.25rem;
+    font-size: 0.77rem;
+  }
+
+  & input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: 0;
+  }
+
+  & select {
+    padding: 0.5rem 0.65rem;
+    outline: none;
+  }
+}
+
+.btn {
+  display: block;
+  background-color: rgb(204, 204, 204);
+  text-align: center;
+  padding: 0.6rem 1.4rem;
+  border-radius: 5px;
+  border: 2px solid rgba(31, 31, 31, 0.329);
+
+  &.btn-icon {
+    padding: 0.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    height: 32px;
+    width: 32px;
+  }
+}
+
+.price {
+  margin-bottom: 2rem;
+
+  & input {
+    width: 7%;
+    display: inline;
+    margin-left: 0.54rem;
+  }
+}
+
+.item-submit {
+  display: block;
+  margin-top: 1rem;
+  border: solid 2px white;
+  color: white;
+  border-radius: 6px;
+  background-color: rgb(48, 63, 97);
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}

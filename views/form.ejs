@@ -5,44 +5,52 @@
   </head>
 
   <body>
-    <%- include('./partials/header.ejs') %>
+    <section id="root">
+      <%- include('./partials/header.ejs') %>
 
-    <main>
-      <h1>Add new item</h1>
+      <main class="item-form">
+        <div class="wrapper-form">
+          <h1>Add new item</h1>
 
-      <form action="/new" method="post">
-        <div>
-          <label for="item">Item Name</label>
-          <input type="text" name="item" id="item" />
+          <form action="/new" method="post">
+            <div class="item-input">
+              <label for="item">Item Name</label>
+              <input type="text" name="item" id="item" />
+            </div>
+
+            <div class="item-input">
+              <label for="brand">Brand Name</label>
+              <select name="brand" id="brand">
+                <% brands.forEach((item) => { %>
+                <option value="<%= item.brand %>"><%= item.brand %></option>
+                <% }) %>
+              </select>
+            </div>
+
+            <div class="item-input">
+              <label for="category">Category</label>
+              <select name="category" id="category">
+                <% categories.forEach((item) => { %>
+                <option value="<%= item.category %>">
+                  <%= item.category %>
+                </option>
+                <% }) %>
+              </select>
+            </div>
+
+            <div class="item-input">
+              <label for="price">Price</label>
+              <p class="price">
+                &dollar;<input type="text" name="price" id="price" />
+              </p>
+            </div>
+
+            <button type="submit" class="item-submit">Add item</button>
+          </form>
+
+          <a href="/">Back to main page</a>
         </div>
-
-        <div>
-          <label for="brand">Brand Name</label>
-          <select name="brand" id="brand">
-            <% brands.forEach((item) => { %>
-            <option value="<%= item.brand %>"><%= item.brand %></option>
-            <% }) %>
-          </select>
-        </div>
-
-        <div>
-          <label for="category">Category</label>
-          <select name="category" id="category">
-            <% categories.forEach((item) => { %>
-            <option value="<%= item.category %>"><%= item.category %></option>
-            <% }) %>
-          </select>
-        </div>
-
-        <div>
-          <label for="price">Price</label>
-          <span>&dollar;<input type="text" name="price" id="price" /></span>
-        </div>
-
-        <button type="submit">Add item</button>
-      </form>
-
-      <a href="/">Back to main page</a>
-    </main>
+      </main>
+    </section>
   </body>
 </html>
