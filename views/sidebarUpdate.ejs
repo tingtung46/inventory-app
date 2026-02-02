@@ -11,8 +11,8 @@
 
     <main class="sidebar-list">
       <div class="sidebar-wrapper">
-        <div class="sidebar-categories">
-          <div class="list-category">
+        <div class="sidebar categories">
+          <div class="list category">
             <h3>Category</h3>
 
             <div class="table-wrapper">
@@ -52,7 +52,7 @@
               </div>
 
               <div>
-                <button type="button" onclick="document.querySelector('#category-dialog').close()">
+                <button type="button" onclick="document.querySelector('#dialog-category').close()">
                   Cancel
                 </button>
 
@@ -61,13 +61,13 @@
             </form>
           </dialog>
 
-          <button type="button" onclick="document.querySelector('#category-dialog').showModal()">
+          <button type="button" class="btn item-new" onclick="document.querySelector('#dialog-category').showModal()">
             Add new category
           </button>
         </div>
 
-        <div class="sidebar-brands">
-          <div class="list-brand">
+        <div class="sidebar brands">
+          <div class="list brand">
             <h3>Brand</h3>
 
             <div class="table-wrapper">
@@ -107,7 +107,7 @@
               </div>
 
               <div>
-                <button type="button" onclick="document.querySelector('#brand-category').close()">
+                <button type="button" onclick="document.querySelector('#dialog-brand').close()">
                   Cancel
                 </button>
 
@@ -116,7 +116,7 @@
             </form>
           </dialog>
 
-          <button type="button" onclick="document.querySelector('#brand-category').showModal()">
+          <button type="button" class="btn item-new" onclick="document.querySelector('#dialog-brand').showModal()">
             Add new brand
           </button>
         </div>
