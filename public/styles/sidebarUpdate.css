@@ -7,6 +7,19 @@ h3 {
   margin-bottom: 0.55rem;
 }
 
+dialog {
+  border: 2px solid rgba(0, 0, 0, 0.301);
+  border-radius: 8px;
+
+  & .dialog-wrapper {
+    padding: 1rem;
+
+    & h1 {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
 .btn {
   display: block;
   background-color: rgb(204, 204, 204);
@@ -45,7 +58,7 @@ h3 {
 }
 
 .table-wrapper {
-  table {
+  & table {
     margin: 0;
   }
 }
@@ -58,4 +71,42 @@ h3 {
   background-color: rgb(48, 63, 97);
   padding: 0.6rem 1rem;
   cursor: pointer;
+}
+
+.item-cancel {
+  display: block;
+  margin-top: 1rem;
+  color: white;
+  border-radius: 6px;
+  background-color: rgb(223, 71, 33);
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+
+.item-input {
+  margin-bottom: 1rem;
+
+  & label,
+  & input {
+    display: block;
+  }
+
+  & label {
+    margin-bottom: 0.25rem;
+    font-size: 0.77rem;
+  }
+
+  & input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: 0;
+  }
+}
+
+.btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
 }

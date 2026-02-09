@@ -43,22 +43,23 @@
           </div>
 
           <dialog id="dialog-category">
-            <h1>Create a new category</h1>
+            <div class="dialog-wrapper">
+              <h1>Create a new category</h1>
 
-            <form action="/new-category" method="post">
-              <div>
-                <label for="category">Category</label>
-                <input type="text" name="category" id="category" />
-              </div>
+              <form action="/new-category" method="post">
+                <div class="item-input">
+                  <label for="category">Category</label>
+                  <input type="text" name="category" id="category" />
+                </div>
 
-              <div>
-                <button type="button" onclick="document.querySelector('#dialog-category').close()">
-                  Cancel
-                </button>
-
-                <button type="submit">Add category</button>
-              </div>
-            </form>
+                <div class="btn-wrapper">
+                  <button type="button" class="btn item-cancel" onclick="document.querySelector('#dialog-category').close()">
+                    Cancel
+                  </button>
+                  <button type="submit" class="btn item-new">Add category</button>
+                </div>
+              </form>
+            </div>
           </dialog>
 
           <button type="button" class="btn item-new" onclick="document.querySelector('#dialog-category').showModal()">
@@ -98,22 +99,23 @@
           </div>
 
           <dialog id="dialog-brand">
-            <h1>Create a new brand</h1>
+            <div class="dialog-wrapper">
+              <h1>Create a new brand</h1>
 
-            <form action="/new-brand" method="post">
-              <div>
-                <label for="brand">Brand</label>
-                <input type="text" name="brand" id="brand" />
-              </div>
+              <form action="/new-brand" method="post">
+                <div class="item-input">
+                  <label for="brand">Brand</label>
+                  <input type="text" name="brand" id="brand" />
+                </div>
 
-              <div>
-                <button type="button" onclick="document.querySelector('#dialog-brand').close()">
-                  Cancel
-                </button>
-
-                <button type="submit">Add brand</button>
-              </div>
-            </form>
+                <div class="btn-wrapper">
+                  <button type="button" class="btn item-cancel" onclick="document.querySelector('#dialog-brand').close()">
+                    Cancel
+                  </button>
+                  <button type="submit" class="btn item-new">Add brand</button>
+                </div>
+              </form>
+            </div>
           </dialog>
 
           <button type="button" class="btn item-new" onclick="document.querySelector('#dialog-brand').showModal()">
