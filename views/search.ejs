@@ -1,16 +1,19 @@
 <html>
-  <head>
-    <title><%= title %></title>
-  </head>
 
-  <body>
-    <%- include('./partials/header.ejs') %>
+<head>
+  <title><%= title %></title>
+</head>
 
-    <main>
-      <% if (items) { %> <%- include('./partials/cards.ejs', { items: items })
-      %> <% } else { %>
-      <p>Item not found</p>
-      <% } %>
-    </main>
-  </body>
+<body>
+  <%- include('./partials/header.ejs') %>
+
+  <main>
+    <% if (!items.length) { %>
+    <p>Item not found</p>
+    <% } else if (locals.items) { %>
+    <%- include('./partials/cards.ejs', { items: items }) %>
+    <% } %>
+  </main>
+</body>
+
 </html>

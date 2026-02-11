@@ -36,7 +36,7 @@ async function updateItem(item, brand, category, price, id) {
 
 async function searchItem(keyword) {
   const { rows } = await pool.query(
-    "SELECT * FROM products WHERE item = $1 OR brand = $1 OR category = $1",
+    "SELECT * FROM products WHERE item LIKE $1 OR brand LIKE $1 OR category LIKE $1",
     [`%${keyword}%`]
   );
 

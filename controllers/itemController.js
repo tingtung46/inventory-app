@@ -61,7 +61,7 @@ const updateItemPost = async (req, res) => {
 };
 
 const searchItemGet = async (req, res) => {
-  const keyword = req.query.keyword;
+  const keyword = req.query.search;
   const searchResult = await db.searchItem(keyword);
 
   res.render("search", { title: "Search Result", items: searchResult });
