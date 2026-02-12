@@ -1,0 +1,19 @@
+h4 {
+  & a:hover {
+    color: rgb(129, 129, 129);
+  }
+}
+
+.item {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+.category {
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}

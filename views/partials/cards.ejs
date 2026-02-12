@@ -1,9 +1,7 @@
-<div class="items-wrapper">
-  <% items.forEach((item) => { %>
-  <div class="item">
-    <h4><a href="/<%= item.id %>/update/"><%= item.item %></a></h4>
-    <p class="category"><%= item.category %></p>
-    <p><%= item.brand %></p>
-  </div>
-  <% }) %>
+<% items.forEach((item) => { %>
+<div class="item">
+  <h4><a href="/<%= item.id %>/update/"><%= item.item %></a></h4>
+  <p class="category"><%= item.category %></p>
+  <p><%= item.brand %></p>
 </div>
+<% }) %>

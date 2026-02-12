@@ -2,18 +2,23 @@
 
 <head>
   <title><%= title %></title>
+  <link rel="stylesheet" href="/styles/search.css">
 </head>
 
 <body>
-  <%- include('./partials/header.ejs') %>
+  <section id="root">
+    <%- include('./partials/header.ejs') %>
 
-  <main>
-    <% if (!items.length) { %>
-    <p>Item not found</p>
-    <% } else if (locals.items) { %>
-    <%- include('./partials/cards.ejs', { items: items }) %>
-    <% } %>
-  </main>
+    <main>
+      <div class="search-wrapper">
+        <% if (!items.length) { %>
+        <p>Item not found</p>
+        <% } else if (locals.items) { %>
+        <%- include('./partials/cards.ejs', { items: items }) %>
+        <% } %>
+      </div>
+    </main>
+  </section>
 </body>
 
 </html>
