@@ -39,6 +39,7 @@ li,
   padding: 0.6rem 1rem;
   cursor: pointer;
   box-shadow: 1px 1px 5px black;
+  text-align: center;
 
   &:hover {
     color: white;
