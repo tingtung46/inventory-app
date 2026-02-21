@@ -3,6 +3,8 @@
 const { Client } = require("pg");
 require("dotenv").config();
 
+const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = process.env;
+
 const categoriesSQL = `
 CREATE TABLE IF NOT EXISTS categories (
   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
@@ -40,7 +42,7 @@ VALUES
 async function categories() {
   console.log("seeding categories...");
   const client = new Client({
-    connectionString: `postgresql://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASS}@localhost:5432/inventory_app`,
+    connectionString: `postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}`,
   });
   await client.connect();
   await client.query(categoriesSQL);
@@ -51,7 +53,7 @@ async function categories() {
 async function brands() {
   console.log("seeding brands...");
   const client = new Client({
-    connectionString: `postgresql://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASS}@localhost:5432/inventory_app`,
+    connectionString: `postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}`,
   });
   await client.connect();
   await client.query(brandsSQL);
