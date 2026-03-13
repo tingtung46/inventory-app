@@ -1,21 +1,4 @@
 const db = require("../db/query");
-const brand = [
-  "Daybird",
-  "Gravitator",
-  "Quester",
-  "Raptor Elite",
-  "Grolltex",
-  "Green Equipment",
-];
-const category = [
-  "Footwear",
-  "Climbing",
-  "Bags",
-  "Trekking",
-  "Jackets",
-  "Navigation",
-  "Cycling",
-];
 
 const capitalizeFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -44,11 +27,13 @@ const addItemPost = async (req, res) => {
 const updateItemGet = async (req, res) => {
   const { id } = req.params;
   const item = await db.getItem(id);
+  const brands = await db.getBrands();
+  const categories = await db.getCategories();
 
   res.render("updateItem", {
     item: item[0],
-    brands: brand,
-    categories: category,
+    brands: brands,
+    categories: categories,
   });
 };
 
